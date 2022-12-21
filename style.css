@@ -1,0 +1,17 @@
+body {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.logoAlura-container {
+  width: 11.11%;
+}
+
+.entradaDatos-container {
+  width: 58.33%;
+}
+
+.mensaje-container {
+  width: 30.55%;
+}
