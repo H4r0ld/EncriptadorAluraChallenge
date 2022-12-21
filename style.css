@@ -1,17 +1,132 @@
+:root {
+  --dark-blue-100: #609ed4;
+  --dark-blue-200: #356ea9;
+  --dark-blue-300: #0a3871;
+  --dark-blue-400: #072b61;
+  --dark-blue-500: #052051;
+
+  --light-blue-100: #f3f5fc;
+  --light-blue-200: #eff1fa;
+  --light-blue-300: #e9ecf8;
+  --light-blue-400: #aab2d5;
+  --light-blue-500: #757fb2;
+
+  --gray-100: #ced4da;
+  --gray-200: #adb5bd;
+  --gray-300: #868e96;
+  --gray-400: #495057;
+  --gray-500: #343a40;
+
+  --sm: 12px;
+  --md: 16px;
+  --lg: 24px;
+  --elg: 32px;
+}
+
+* {
+  margin: 0px;
+}
+
+html {
+  height: 100%;
+  background: var(--light-blue-100);
+}
+
 body {
   display: flex;
   flex-direction: row;
-  align-items: stretch;
+  height: 100%;
+  font-family: "Inter", sans-serif;
 }
 
+.inactive {
+  display: none;
+}
+
+/*section */
 .logoAlura-container {
   width: 11.11%;
+  padding-top: 40px;
+  padding-left: 40px;
 }
 
+/*section*/
 .entradaDatos-container {
   width: 58.33%;
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
+.entradaDatos-container textarea {
+  width: 100%;
+  font-size: var(--md);
+}
+
+.inputDatos textarea {
+  font-family: "Inter", sans-serif;
+  color: var(--dark-blue-300);
+  font-size: var(--lg);
+  background: var(--light-blue-100);
+  border: none;
+}
+
+.advertencia-parrafo {
+  display: flex;
+  padding-bottom: 16px;
+}
+
+.advertencia-parrafo p {
+  padding-left: 8px;
+  font-size: var(--sm);
+  color: var(--gray-400);
+}
+
+.buttonsDatos{
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.buttonsDatos button:nth-child(0) {
+  background-color: var(--dark-blue-300);
+  color: white;
+  border-radius: 24px;
+}
+
+/*section*/
 .mensaje-container {
   width: 30.55%;
+  padding: 40px 40px 40px 0;
+}
+
+.ventana {
+  padding: 0 32px 0 32px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+  border-radius: 32px;
+  background-color: white;
+}
+
+.imgTexto {
+  text-align: center;
+}
+
+.imgTexto h3 {
+  color: var(--gray-500);
+  font-size: var(--lm);
+  padding: 32px 0 16px 0;
+}
+
+.imgTexto p {
+  font-size: var(--md);
+  color: var(--gray-400);
+}
+
+.imgTexto img {
+  width: 100%;
+  color: darkblu;
 }
