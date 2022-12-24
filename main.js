@@ -4,16 +4,18 @@ const txaIngresoTexto = document.querySelector("#txaIngresoTexto");
 const pMostrarTexto = document.querySelector("#pMostrarTexto");
 const mensaje = document.querySelector(".mensaje");
 const imgTexto = document.querySelector(".imgTexto");
-const btnCopiar = document.querySelector(".button-mensaje");
+const button_mensaje = document.querySelector(".button-mensaje");
+const btnCopiar = document.querySelector("#btnCopiar");
 
 btnEncriptar.addEventListener("click", encriptar);
 btnDesencriptar.addEventListener("click", desencriptar);
+btnCopiar.addEventListener("click", copiar, false);
 
 function encriptar() {
   const p = txaIngresoTexto.value;
   const isImgOff = imgTexto.classList.contains("inactive");
 
-  console.log(p);
+  //console.log(p);
 
   if (p == "") {
     //console.log("hola");
@@ -23,9 +25,7 @@ function encriptar() {
     }
 
     mensaje.classList.add("inactive");
-    btnCopiar.classList.add("inactive");
-
-
+    button_mensaje.classList.add("inactive");
   } else {
     const e = p.replaceAll("e", "enter");
     const i = e.replaceAll("i", "imes");
@@ -42,9 +42,7 @@ function encriptar() {
       imgTexto.classList.add("inactive");
     }
 
-    
-    btnCopiar.classList.remove("inactive");
-
+    button_mensaje.classList.remove("inactive");
   }
 }
 
@@ -54,14 +52,12 @@ function desencriptar() {
 
   //console.log(p);
   if (p == "") {
-
     if (isImgOff) {
       imgTexto.classList.remove("inactive");
     }
 
     mensaje.classList.add("inactive");
-    btnCopiar.classList.add("inactive");
-    
+    button_mensaje.classList.add("inactive");
   } else {
     const e = p.replaceAll("enter", "e");
     const i = e.replaceAll("imes", "i");
@@ -76,4 +72,15 @@ function desencriptar() {
       imgTexto.classList.add("inactive");
     }
   }
+}
+
+function copiar() {
+  let inputFalso = document.createElement("input");
+  inputFalso.setAttribute("value", pMostrarTexto.innerHTML);
+  document.body.appendChild(inputFalso);
+  inputFalso.select();
+  document.execCommand("copy");
+  document.body.removeChild(inputFalso);
+  alert("Copiado al portapapeles");
+  
 }
